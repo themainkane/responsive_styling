@@ -1,0 +1,59 @@
+// assigning variables
+
+$small-screen: 768px;
+$large-screen: 1200px;
+
+@mixin row-expand {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.container {
+    max-width: 90%;
+
+    @media (min-width: $small-screen) {
+            header {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: center;
+            }
+    
+            nav {
+                @include row-expand;
+                justify-content: flex-start;
+    
+                a {
+                    margin-right: 30px;
+    
+                }
+            }
+  
+    @media (min-width: $small-screen) and (max-width: $large-screen) {
+            .plans {
+                @include row-expand;
+                padding: 0;
+                margin: 0;
+                .card {
+                    width: 46%;
+                    margin: 10px
+                }
+            }
+
+    }
+    @media (min-width: $large-screen) {
+        .plans {
+            @include row-expand;
+            padding: 0;
+            margin: 0;
+            .card {
+                    width: 23%;
+                    margin: 10px;
+        }
+    }
+}
+    }
+}
